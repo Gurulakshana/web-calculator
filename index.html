@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+    padding-top: 10px;
+}
+div{
+    width: 220px;
+    height: 400px;
+    background-color: black;
+    color: white;
+
+}
+input{
+    display: block;
+    margin: 3px;
+    width: 90%;
+    height: 30px;
+}
+button{
+    display: inline;
+    margin: 3px;
+    border-radius: 100px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+
+#r12{
+    width: 90px;
+}
+#r2{
+    background-color: orange;
+}
+.r{
+    background-color: gray;
+}
+    </style>
+</head>
+<body>
+    <center>
+        <div>
+            <h2>CALCULATOR</h2>
+            <input type="text" id="inp" placeholder="0">
+            <table>
+                <tr>
+                    <td><button class="r1" onclick="del()">AC</button></td>
+                    <td><button class="r" onclick="dis('%')" id="r2">%</button></td>
+                    <td ><button class="r" onclick="dis('/')" id="r2">/</button></td>
+                </tr>
+                <tr>
+                    <td><button value="7" class="r" onclick="dis('7')" >7</button></td>
+                    <td><button class="r" onclick="dis('8')" >8</button></td>
+                    <td><button class="r" onclick="dis('9')" >9</button></td>
+                    <td><button class="r" onclick="dis('*')" id="r2">*</button></td>
+                </tr>
+                <tr>
+                    <td><button class="r" onclick="dis('4')" >4</button></td>
+                    <td><button class="r" onclick="dis('5')" >5</button></td>
+                    <td><button class="r" onclick="dis('6')" >6</button></td>
+                    <td><button class="r" onclick="dis('-')" id="r2">-</button><br></td>
+                </tr>
+                <tr>
+                    <td><button class="r" onclick="dis('1')" >1</button></td>
+                    <td><button class="r" onclick="dis('2')" >2</button></td>
+                    <td><button class="r" onclick="dis('3')" >3</button></td>
+                    <td><button class="r" onclick="dis('+')" id="r2">+</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2" ><button class="r" onclick="dis('0')"  id="r12">0</button></td>
+                    <td><button class="r" onclick="dis('.')" >.</button></td>
+                    <td><button id="r2" onclick="solve()">=</button></td>
+                </tr>
+            </table>
+            
+            
+            
+        </div>
+        <script>
+        function dis(val)
+            {
+                document.getElementById("inp").value+=val
+            }
+            function solve() { 
+                let x = document.getElementById("inp").value 
+                let y = eval(x)
+                document.getElementById("inp").value = y 
+            }
+            function del(){
+                document.getElementById("inp").value=""
+            }</script>
+    </center>
+</body>
+</html>
